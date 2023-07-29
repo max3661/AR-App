@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
 using TMPro;
+using Vuforia;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -12,7 +13,20 @@ public class ScoreManager : MonoBehaviour
 
     public TMP_Text textComponent;
 
+    public GameObject imageTargetObject;
+    private ImageTargetBehaviour imageTargetBehaviour;
+
     void Start() {
+        // find image target behavior component from ImageTarget gameobj
+        imageTargetBehaviour = imageTargetObject.GetComponent<ImageTargetBehaviour>();
+
+        // Check if the component was found
+        if (imageTargetBehaviour == null)
+        {
+            Debug.LogError("ImageTargetBehaviour component not found on the specified GameObject.");
+            // Add future error handling here
+        }
+
         LoadScore();
         Debug.Log(score);
     }
@@ -22,11 +36,12 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void UpdateScore() 
-    {
+    {   
+        // increment score by X value
         score += 100; 
-        Debug.Log(score);
         SaveScore();
-        Debug.Log("ScoreSaved");
+        // temp debug.log for the targetname function 
+        Debug.Log("Found marker with name: " + imageTargetBehaviour.TargetName);
     }
 
     public void SaveScore()
