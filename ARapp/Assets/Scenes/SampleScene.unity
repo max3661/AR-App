@@ -524,9 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2e6beb87f8820498f2fc1a79a8a8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   textComponent: {fileID: 2048931134}
   imageTargetObject: {fileID: 1809977524}
+  score: 0
 --- !u!4 &881423610
 Transform:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 881423609}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: UpdateScore
+        m_MethodName: OnFound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: test
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e23f96af913654ddf9a6f02407dd0700, type: 2}
   m_sharedMaterial: {fileID: -6617297183758545750, guid: e23f96af913654ddf9a6f02407dd0700, type: 2}
