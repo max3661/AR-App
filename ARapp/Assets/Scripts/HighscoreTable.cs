@@ -26,6 +26,7 @@ public class HighscoreTable : MonoBehaviour
             new HighscoreEntry{name = "SARAH", score = 4400}, 
             new HighscoreEntry{name = "OSCAR", score = 8000}, 
             new HighscoreEntry{name = "JONAS", score = 300},
+            new HighscoreEntry{name = "DANI", score = 4100},
         };
 
         // Sort entry list by Score
@@ -48,7 +49,7 @@ public class HighscoreTable : MonoBehaviour
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList) {
-        float templateHeight = 60f;
+        float templateHeight = 90f;
         
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
