@@ -1,5 +1,8 @@
 # Vuforia-AR-App
 
+### **IMPORTANT NOTE: For this project to work on your machine you must manually add the "com.ptc.vuforia.engine-10.15.4.tgz" file under "ARapp/Packages"**
+
+<br />
 
 ## Demo Video: 
 
