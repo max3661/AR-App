@@ -12,6 +12,12 @@ public class SceneSwitcher : MonoBehaviour
     // Function to switch back to main scene
     public void SwitchToMainScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainScene");
+    }
+
+    // Function to switch back to Scoreboard scene
+    public void SwitchToScoreboardScene()
+    {
+        SceneManager.LoadScene("scoreboard");
     }
 }

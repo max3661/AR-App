@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour
 
     [HideInInspector]
     public int score; 
+    private const string ScoreKey = "SavedScore";
 
     void Start() {
         // find image target behavior component from ImageTarget gameobj
@@ -101,44 +102,15 @@ public class ScoreManager : MonoBehaviour
 
     public void SaveScore()
     {
-        string savePath = Application.persistentDataPath + "/score.dat";
-
-        // Create a data object to store the weights
-        ScoreData scoreData = new ScoreData();
-        scoreData.score = score;
-
-        // Serialize the data object to a binary file
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream fileStream = File.Create(savePath);
-        formatter.Serialize(fileStream, scoreData);
-        fileStream.Close();
-
+        PlayerPrefs.SetInt(ScoreKey, score);
+        PlayerPrefs.Save();
         Debug.Log("Score data saved.");
     }
 
     public void LoadScore()
     {
-        string savePath = Application.persistentDataPath + "/score.dat";
-
-        if (File.Exists(savePath))
-        {
-            // Deserialize the binary file to retrieve the data object
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream fileStream = File.Open(savePath, FileMode.Open);
-            ScoreData scoreData = (ScoreData)formatter.Deserialize(fileStream);
-            fileStream.Close();
-
-            // Set the score from the loaded data object
-            score = scoreData.score;
-
-            Debug.Log("Score data loaded.");
-        }
-    }
-
-    [System.Serializable]
-    public class ScoreData
-    {
-        public int score;
+        score = PlayerPrefs.GetInt(ScoreKey, 0);
+        Debug.Log("Score data loaded.");
     }
 
     // Function to save the array to PlayerPrefs
