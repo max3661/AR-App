@@ -1,7 +1,7 @@
 # Vuforia-AR-App
 
 
-Basic Functionality: 
+Core Functionality: 
 
 - Ability to scan a marker, which updates the players score and logs the markers name
 - Each marker will only give points once, as there is a check for duplicates before points are added
