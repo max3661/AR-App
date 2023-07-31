@@ -5,7 +5,7 @@
 
 https://github.com/max3661/Vuforia-AR-App/assets/83460693/3cc3abd9-d224-4524-a013-22afba302f0b
 
-(Im using an older webcam to imitate a phone camera, which is why the video feed is a bit laggy)
+(I'm using an older webcam to imitate a phone camera, which is why the video feed is a bit laggy)
 
 <br />
 
